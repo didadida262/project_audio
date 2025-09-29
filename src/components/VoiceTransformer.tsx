@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 import { Download, Play, Pause, Loader2, Zap, User } from 'lucide-react'
 import { useVoiceTransform } from '@/hooks/useVoiceTransform'
 import { cn } from '@/lib/utils'
+import { BaseComponentProps, VoiceTransformType } from '@/types'
 
-interface VoiceTransformerProps {
+interface VoiceTransformerProps extends BaseComponentProps {
   audioBlob: Blob | null
-  className?: string
 }
 
 export function VoiceTransformer({ audioBlob, className }: VoiceTransformerProps) {
@@ -72,7 +72,7 @@ export function VoiceTransformer({ audioBlob, className }: VoiceTransformerProps
     URL.revokeObjectURL(url)
   }
 
-  const handleTransform = async (type: 'hacker' | 'female') => {
+  const handleTransform = async (type: VoiceTransformType) => {
     if (!audioBlob) return
     
     if (type === 'hacker') {

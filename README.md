@@ -1,4 +1,4 @@
-# 变身器 - Voice Transformer
+# 变声器 - Voice Transformer
 
 一个强大的实时语音转换应用，支持多种变音效果。使用React、Next.js、FFmpeg和Neon数据库构建，部署在Vercel上。
 
@@ -152,4 +152,4 @@ npm start
 
 ---
 
-**变身器** - 让声音变得与众不同！ 🎭✨
+**变声器** - 让声音变得与众不同！ 🎭✨

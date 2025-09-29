@@ -1,10 +1,10 @@
-# 变身器 - 产品需求文档 (PRD)
+# 变声器 - 产品需求文档 (PRD)
 
 ## 项目概述
-变身器是一个纯前端的SPA应用，允许用户录音并进行实时变音处理。应用采用Aceternity主题风格，提供简约酷炫的用户体验。
+变声器是一个纯前端的SPA应用，允许用户录音并进行实时变音处理。应用采用Aceternity主题风格，提供简约酷炫的用户体验。
 
 ## 技术栈
-- **前端**: React + TypeScript
+- **前端**: React + TypeScript + Next.js
 - **后端**: Node.js (API Routes)
 - **数据库**: Neon (PostgreSQL)
 - **部署**: Vercel

@@ -5,11 +5,11 @@ import { motion } from 'framer-motion'
 import { Mic, MicOff, Square } from 'lucide-react'
 import { useAudioRecorder } from '@/hooks/useAudioRecorder'
 import { cn } from '@/lib/utils'
+import { BaseComponentProps } from '@/types'
 
-interface AudioRecorderProps {
+interface AudioRecorderProps extends BaseComponentProps {
   onRecordingComplete: (audioBlob: Blob) => void
   onTextUpdate: (text: string) => void
-  className?: string
 }
 
 export function AudioRecorder({ onRecordingComplete, onTextUpdate, className }: AudioRecorderProps) {

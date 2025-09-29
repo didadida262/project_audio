@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "type-check:watch": "tsc --noEmit --watch",
+    "clean": "rimraf .next out dist",
+    "preview": "next build && next start"
   },
   "dependencies": {
     "next": "14.0.4",
@@ -37,6 +41,9 @@
   },
   "devDependencies": {
     "eslint": "^8.56.0",
-    "eslint-config-next": "14.0.4"
+    "eslint-config-next": "14.0.4",
+    "rimraf": "^5.0.5",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.18"
   }
 }

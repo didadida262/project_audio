@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { BaseComponentProps } from '@/types'
 
-interface TextDisplayProps {
+interface TextDisplayProps extends BaseComponentProps {
   text: string
   isRecording: boolean
-  className?: string
 }
 
 export function TextDisplay({ text, isRecording, className = '' }: TextDisplayProps) {

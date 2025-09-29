@@ -37,7 +37,7 @@ export function Layout() {
         className="text-center py-8"
       >
         <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
-          变身器
+          变声器
         </h1>
         <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
           实时语音转换，让你的声音变得与众不同
