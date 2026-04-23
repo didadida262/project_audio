@@ -28,11 +28,11 @@ export function TextDisplay({ text, isRecording, className = '' }: TextDisplayPr
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={`relative p-6 rounded-2xl bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 border border-purple-200 dark:border-purple-800 ${className}`}
+      className={`relative p-6 rounded-2xl bg-card/50 backdrop-blur-sm border border-border ${className}`}
     >
       <div className="flex items-center gap-2 mb-4">
         <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-        <span className="text-sm font-medium text-gray-600 dark:text-gray-400">
+        <span className="text-sm font-medium text-muted-foreground">
           {isRecording ? '正在录音...' : '语音识别'}
         </span>
       </div>
@@ -43,21 +43,21 @@ export function TextDisplay({ text, isRecording, className = '' }: TextDisplayPr
             key={displayedText}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-lg leading-relaxed text-gray-800 dark:text-gray-200 whitespace-pre-wrap"
+            className="text-lg leading-relaxed text-foreground font-medium whitespace-pre-wrap"
           >
             {displayedText}
             {isTyping && (
               <motion.span
                 animate={{ opacity: [1, 0, 1] }}
                 transition={{ duration: 0.8, repeat: Infinity }}
-                className="inline-block w-2 h-6 bg-purple-500 ml-1"
+                className="inline-block w-2 h-6 bg-primary ml-1"
               />
             )}
           </motion.p>
         ) : (
-          <div className="flex items-center justify-center h-32 text-gray-400 dark:text-gray-600">
+          <div className="flex items-center justify-center h-32 text-muted-foreground">
             <div className="text-center">
-              <div className="w-8 h-8 mx-auto mb-2 rounded-full border-2 border-purple-300 border-t-purple-600 animate-spin" />
+              <div className="w-8 h-8 mx-auto mb-2 rounded-full border-2 border-primary/30 border-t-primary animate-spin" />
               <p className="text-sm">点击录音按钮开始说话</p>
             </div>
           </div>

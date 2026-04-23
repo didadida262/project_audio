@@ -29,23 +29,30 @@ export function Layout() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 dark:from-gray-900 dark:via-purple-900 dark:to-blue-900">
+    <div className="min-h-screen bg-background text-foreground selection:bg-purple-500/30">
+      {/* Background Decorative Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] rounded-full bg-purple-500/10 blur-[120px]" />
+        <div className="absolute top-[20%] -right-[10%] w-[30%] h-[30%] rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="absolute -bottom-[10%] left-[20%] w-[50%] h-[50%] rounded-full bg-pink-500/10 blur-[120px]" />
+      </div>
+
       {/* Header */}
       <motion.header
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="text-center py-8"
+        className="relative text-center py-12"
       >
-        <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-blue-600 bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 bg-clip-text text-transparent">
           变声器
         </h1>
-        <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
+        <p className="mt-6 text-xl text-muted-foreground max-w-2xl mx-auto px-4">
           实时语音转换，让你的声音变得与众不同
         </p>
       </motion.header>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 pb-8">
+      <div className="relative container mx-auto px-4 pb-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {/* Left Side - Recording */}
           <motion.div
@@ -76,8 +83,8 @@ export function Layout() {
             transition={{ delay: 0.4 }}
             className="space-y-6"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-xl border border-gray-200 dark:border-gray-700">
-              <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-6 text-center">
+            <div className="bg-card text-card-foreground rounded-2xl p-6 shadow-xl border border-border">
+              <h2 className="text-2xl font-bold mb-6 text-center">
                 变音效果
               </h2>
               
@@ -92,12 +99,12 @@ export function Layout() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6 border border-blue-200 dark:border-blue-800"
+              className="bg-accent/50 backdrop-blur-sm rounded-xl p-6 border border-border"
             >
-              <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200 mb-4">
+              <h3 className="text-lg font-semibold mb-4">
                 功能特色
               </h3>
-              <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <ul className="space-y-2 text-sm text-muted-foreground">
                 <li className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-blue-500 rounded-full" />
                   <span>实时语音识别</span>

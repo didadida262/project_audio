@@ -78,7 +78,7 @@ export function AudioRecorder({ onRecordingComplete, onTextUpdate, className }: 
           animate={{ opacity: 1, scale: 1 }}
           className="text-center"
         >
-          <div className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+          <div className="text-sm text-muted-foreground mb-2">
             录音中... {Math.floor(duration)}s
           </div>
           <div className="flex space-x-1">
@@ -87,7 +87,7 @@ export function AudioRecorder({ onRecordingComplete, onTextUpdate, className }: 
                 key={i}
                 animate={{ height: [20, 40, 20] }}
                 transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.2 }}
-                className="w-1 bg-purple-500 rounded-full"
+                className="w-1 bg-primary rounded-full"
               />
             ))}
           </div>
@@ -102,10 +102,10 @@ export function AudioRecorder({ onRecordingComplete, onTextUpdate, className }: 
         disabled={!!error}
         className={cn(
           'relative w-24 h-24 rounded-full flex items-center justify-center transition-all duration-300',
-          'focus:outline-none focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-700',
+          'focus:outline-none focus:ring-4 focus:ring-primary/30',
           isRecording
-            ? 'bg-red-500 hover:bg-red-600 shadow-lg shadow-red-500/50'
-            : 'bg-gradient-to-br from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 shadow-lg shadow-purple-500/50',
+            ? 'bg-destructive hover:bg-destructive/90 shadow-lg shadow-destructive/50'
+            : 'bg-gradient-to-br from-primary to-purple-600 hover:from-primary/90 hover:to-purple-700 shadow-lg shadow-primary/50',
           error && 'opacity-50 cursor-not-allowed'
         )}
       >
@@ -119,7 +119,7 @@ export function AudioRecorder({ onRecordingComplete, onTextUpdate, className }: 
           <motion.div
             animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 1, repeat: Infinity }}
-            className="absolute inset-0 rounded-full border-4 border-red-300"
+            className="absolute inset-0 rounded-full border-4 border-destructive/30"
           />
         )}
       </motion.button>
@@ -131,7 +131,7 @@ export function AudioRecorder({ onRecordingComplete, onTextUpdate, className }: 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={handleClearRecording}
-            className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+            className="px-4 py-2 bg-secondary text-secondary-foreground rounded-lg hover:bg-secondary/80 transition-colors"
           >
             清除录音
           </motion.button>
@@ -143,14 +143,14 @@ export function AudioRecorder({ onRecordingComplete, onTextUpdate, className }: 
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-red-500 text-sm text-center max-w-xs"
+          className="text-destructive text-sm text-center max-w-xs"
         >
           {error}
         </motion.div>
       )}
 
       {/* Instructions */}
-      <div className="text-center text-sm text-gray-500 dark:text-gray-400 max-w-xs">
+      <div className="text-center text-sm text-muted-foreground max-w-xs">
         {isRecording 
           ? '点击停止录音' 
           : '点击开始录音，说出你想要转换的话'

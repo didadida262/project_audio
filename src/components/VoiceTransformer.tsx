@@ -136,15 +136,15 @@ export function VoiceTransformer({ audioBlob, className }: VoiceTransformerProps
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="p-4 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20 rounded-xl border border-green-200 dark:border-green-800"
+          className="p-4 bg-primary/10 backdrop-blur-sm rounded-xl border border-primary/20"
         >
           <div className="flex items-center justify-between mb-4">
-            <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-200">
+            <h3 className="text-lg font-semibold text-foreground">
               转换完成
             </h3>
             <button
               onClick={clearTransformed}
-              className="text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
+              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
             >
               清除
             </button>
@@ -155,7 +155,7 @@ export function VoiceTransformer({ audioBlob, className }: VoiceTransformerProps
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => isPlaying ? stopAudio() : playAudio(transformedAudio)}
-              className="flex items-center space-x-2 px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors shadow-lg shadow-blue-900/20"
             >
               {isPlaying ? (
                 <Pause className="w-4 h-4" />
@@ -169,7 +169,7 @@ export function VoiceTransformer({ audioBlob, className }: VoiceTransformerProps
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => downloadAudio(transformedAudio, 'transformed-voice.wav')}
-              className="flex items-center space-x-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition-colors"
+              className="flex items-center space-x-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-lg shadow-emerald-900/20"
             >
               <Download className="w-4 h-4" />
               <span>下载</span>
@@ -183,15 +183,15 @@ export function VoiceTransformer({ audioBlob, className }: VoiceTransformerProps
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-lg"
+          className="p-3 bg-destructive/10 border border-destructive/20 rounded-lg"
         >
-          <p className="text-red-600 dark:text-red-400 text-sm">{error}</p>
+          <p className="text-destructive text-sm">{error}</p>
         </motion.div>
       )}
 
       {/* Instructions */}
       {!audioBlob && (
-        <div className="text-center text-sm text-gray-500 dark:text-gray-400">
+        <div className="text-center text-sm text-muted-foreground">
           <p>请先录音，然后选择变音效果</p>
         </div>
       )}
