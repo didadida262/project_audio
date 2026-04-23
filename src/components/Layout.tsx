@@ -127,17 +127,6 @@ export function Layout() {
         </div>
       </div>
 
-      {/* Footer */}
-      <motion.footer
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.8 }}
-        className="text-center py-6 text-gray-500 dark:text-gray-400"
-      >
-        <p className="text-sm">
-          Powered by React, Next.js & FFmpeg
-        </p>
-      </motion.footer>
     </div>
   )
 }
